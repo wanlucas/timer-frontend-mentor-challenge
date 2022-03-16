@@ -84,7 +84,7 @@ main {
 }
 .sheet.top {
     position: relative;
-    border-bottom: 1px solid hsla(0, 0%, 0%, 0.8);
+    border-bottom: 1px solid transparent;
     background: hsl(235, 16%, 14%);
     border-radius: 6px 6px 0 0;
 }
@@ -119,13 +119,26 @@ main {
     height: 100%;
     background: inherit;
     border-radius: inherit;
-    animation: turn 0.5s;
+    z-index: 20;
 }
 
+.sheet.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    top: 0;
+    left: 0;
+    z-index: -20;
+}
 @keyframes turn {
-    to {
+    30% {
+         transform: translateY(-50%) skew(20deg) rotateX(90deg);
+    }
+    100% {
         color: transparent;
-        transform: translateY(-100%) rotateX(-180deg);
+        background: hsl(235, 15%, 15%);
+        transform: translateY(-100%) rotateX(180deg);
     }
 }
 footer {
