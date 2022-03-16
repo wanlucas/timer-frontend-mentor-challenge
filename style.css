@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@600;700&display=swap');
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    background: black;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Red Hat Text', sans-serif;
+}
+
+.container {
+    width: 88%;
+    height: 100%;
+    position: relative;
+    background: hsl(0, 15%, 6%);
+    background-repeat: no-repeat;
+    background-image: url(images/bg-stars.svg);
+
+}
+header, nav, main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    height: 34vh;
+    color: rgb(232, 232, 232);
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.4rem;
+    text-shadow: 1px 0 hsla(0, 0%, 100%, 0.15);
+}
+main {
+    width: 100%;
+}
+.timer {
+    display: flex;
+}
+.time-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.3rem;
+    color: hsl(0, 0%, 57%);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+}
+.sheets {
+    width: 9vw;
+    height: 9vw;
+    background: hsla(0, 0%, 4%, 0.6);
+    border-radius: 8px;
+    margin: 13px;
+}
+.sheet {
+    display: flex;
+    justify-content: center;
+    font-size: 4rem;
+    height: 46%;
+    font-weight: 700;
+    color:hsl(345, 95%, 68%);
+}
+.sheet p {
+    overflow: hidden;
+    line-height: 0;
+}
+.sheet.top p {
+    display: flex;
+    align-items: flex-end;
+}
+.sheet.top {
+    position: relative;
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.8);
+    background: hsl(235, 16%, 14%);
+    border-radius: 6px 6px 0 0;
+}
+.sheet.top::after, .sheet.top::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(48%, 50%);
+    background: hsl(0, 0%, 4%);
+    height: 9px;
+    width: 10px;
+    border-radius: 50%;
+    z-index: 10;
+}
+.sheet.top::before {
+    right: unset;
+    left: 0;
+    transform: translate(-48%, 50%);
+}
+.sheet.bottom {
+    position: relative;
+    background: hsl(230, 15%, 16%);
+    border-radius: 0 0 6px 6px;
+    transform-style: preserve-3d;
+}
+.sheet.front {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    animation: turn 0.5s;
+}
+
+@keyframes turn {
+    to {
+        color: transparent;
+        transform: translateY(-100%) rotateX(-180deg);
+    }
+}
+footer {
+    position: absolute;
+    width: 100%;
+    height: 23vh;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-image: url(images/pattern-hills.svg);
+}
+nav {
+    width: 100%;
+    height: 100%;
+    padding-top: 2%;
+}
+nav a {
+   margin: 0 13px;
+}
+nav a img {
+    width: 20px;
+}
+.attribution {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+.attribution a {
+   color: hsl(240, 54%, 52%);
+}
+.attribution p {
+    padding: 0 15px;
+}
