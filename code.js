@@ -3,17 +3,15 @@ const daysHTML = document.getElementById('days');
 const hoursHTML = document.getElementById('hours');
 const minutesHTML = document.getElementById('minutes');
 const secondsHTML = document.getElementById('seconds');
-var timer = {'days' : 14, 'hours' : 0, 'minutes' : 0, 'seconds' : 0}, tictac = new Audio();
-tictac = src('tictac.mp3');
-
-setInterval(() => {
+var timer = {'days' : 14, 'hours' : 0, 'minutes' : 0, 'seconds' : 0}, tictac = new Audio(), finished = false;
+tictac.src = ('tictac.mp3');
+var count = setInterval(() => {
     updateScreenTime();
     updateTime()
-    play(tictac);
+    tictac.play();
+    if(finished) clearInterval(count);
 },1000);
-
 function updateTime() {
-    console.log(timer.seconds)
     if(timer.seconds > 0) timer.seconds--
     else {
          timer.seconds = 59;
@@ -24,7 +22,7 @@ function updateTime() {
              else {
                  timer.hours = 23;
                  if(timer.days > 0) timer.days--
-                 else finished();
+                 else finished = true;
              }
          }
     }
@@ -36,7 +34,6 @@ function updateScreenTime() {
         const front = e.querySelector('.sheet.front'), frontTxt = front.querySelector('p');
         const topTxt = e.querySelector('.sheet.top p');
         topTxt.innerText = value - 1, frontTxt.innerText = value, bottomTxt.innerText = value;
-        
         turnAnimation(front, value, frontTxt, 0.5);
     });
 };
