@@ -4,12 +4,10 @@ const hoursHTML = document.getElementById('hours');
 const minutesHTML = document.getElementById('minutes');
 const secondsHTML = document.getElementById('seconds');
 var timer = {'days' : 14, 'hours' : 0, 'minutes' : 0, 'seconds' : 0}, tictac = new Audio();
-tictac = src('tictac.mp3');
 
 setInterval(() => {
     updateScreenTime();
     updateTime()
-    play(tictac);
 },1000);
 
 function updateTime() {
