@@ -175,7 +175,10 @@ nav a img:hover {
     font-size: 0.8rem;
 }
 .attribution a {
-   color: hsl(240, 54%, 52%);
+   color: hsl(13, 65%, 45%);
+}
+.attribution a:hover {
+    color: hsl(13, 62%, 53%)
 }
 .attribution p {
     padding: 0 15px;
