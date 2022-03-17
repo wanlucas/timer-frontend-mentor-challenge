@@ -11,13 +11,8 @@ var count = setInterval(() => {
     updateTime()
     tictac.play();
     if(finished) clearInterval(count);
-
-var timer = {'days' : 14, 'hours' : 0, 'minutes' : 0, 'seconds' : 0}, tictac = new Audio();
-
-setInterval(() => {
-    updateScreenTime();
-    updateTime()
 },1000);
+
 function updateTime() {
     if(timer.seconds > 0) timer.seconds--
     else {
