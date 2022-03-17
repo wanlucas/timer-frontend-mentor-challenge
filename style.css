@@ -60,8 +60,8 @@ main {
     text-shadow: 1px 1px rgba(0, 0, 0, 0.15);
 }
 .sheets {
-    width: 9vw;
-    height: 9vw;
+    width: 120px;
+    height: 120px;
     background: hsla(0, 0%, 4%, 0.6);
     border-radius: 8px;
     margin: 13px;
@@ -78,14 +78,19 @@ main {
     overflow: hidden;
     line-height: 0;
 }
-.sheet.top p {
+.sheet.top p{
     display: flex;
     align-items: flex-end;
+}
+.sheet p.flip {
+    display: flex;
+    align-items: flex-start;
+    transform: rotateX(180deg);
 }
 .sheet.top {
     position: relative;
     border-bottom: 1px solid transparent;
-    background: hsl(235, 16%, 14%);
+    background: hsl(234, 17%, 12%);
     border-radius: 6px 6px 0 0;
 }
 .sheet.top::after, .sheet.top::before {
@@ -98,7 +103,7 @@ main {
     height: 9px;
     width: 10px;
     border-radius: 50%;
-    z-index: 10;
+    z-index: 20;
 }
 .sheet.top::before {
     right: unset;
@@ -119,26 +124,16 @@ main {
     height: 100%;
     background: inherit;
     border-radius: inherit;
-    z-index: 20;
+    z-index: 10;
 }
 
-.sheet.back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: inherit;
-    top: 0;
-    left: 0;
-    z-index: -20;
-}
 @keyframes turn {
-    30% {
-         transform: translateY(-50%) skew(20deg) rotateX(90deg);
+    from {
+        background: hsl(240, 11%, 23%);
     }
-    100% {
-        color: transparent;
-        background: hsl(235, 15%, 15%);
-        transform: translateY(-100%) rotateX(180deg);
+    to {
+        background: hsl(230, 14%, 17%);
+        transform: translateY(100%) rotateX(-180deg);
     }
 }
 footer {
