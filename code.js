@@ -3,16 +3,12 @@ const daysHTML = document.getElementById('days');
 const hoursHTML = document.getElementById('hours');
 const minutesHTML = document.getElementById('minutes');
 const secondsHTML = document.getElementById('seconds');
-
-var timer = {'days' : 14, 'hours' : 0, 'minutes' : 0, 'seconds' : 0}, tictac = new Audio(), finished = false;
-tictac.src = ('tictac.mp3');
+var timer = {'days' : 14, 'hours' : 0, 'minutes' : 0, 'seconds' : 0}, finished = false;
 var count = setInterval(() => {
     updateScreenTime();
     updateTime()
-    tictac.play();
     if(finished) clearInterval(count);
 },1000);
-
 function updateTime() {
     if(timer.seconds > 0) timer.seconds--
     else {
